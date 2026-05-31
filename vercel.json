@@ -1,0 +1,45 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "static/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/generate",
+      "dest": "/api/index.py",
+      "methods": ["POST"]
+    },
+    {
+      "src": "/api/content",
+      "dest": "/api/index.py",
+      "methods": ["GET"]
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/index.py"
+    },
+    {
+      "src": "/",
+      "dest": "/static/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/static/$1"
+    }
+  ],
+  "env": {
+    "FLASK_ENV": "production"
+  },
+  "functions": {
+    "api/index.py": {
+      "maxDuration": 30
+    }
+  }
+}

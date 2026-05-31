@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greyhound Lines - 美国城市之旅</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <div class="bus-icon">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 48V20C8 14.477 12.477 10 18 10H46C51.523 10 56 14.477 56 20V48H8Z" fill="url(#busGradient)"/>
+                        <rect x="12" y="16" width="40" height="8" rx="2" fill="rgba(255,255,255,0.3)"/>
+                        <rect x="14" y="28" width="10" height="12" rx="2" fill="rgba(255,255,255,0.4)"/>
+                        <rect x="28" y="28" width="10" height="12" rx="2" fill="rgba(255,255,255,0.4)"/>
+                        <rect x="42" y="28" width="8" height="12" rx="2" fill="rgba(255,255,255,0.4)"/>
+                        <circle cx="20" cy="52" r="6" fill="#1a1a2e"/>
+                        <circle cx="44" cy="52" r="6" fill="#1a1a2e"/>
+                        <circle cx="20" cy="52" r="3" fill="#4a4a6a"/>
+                        <circle cx="44" cy="52" r="3" fill="#4a4a6a"/>
+                        <defs>
+                            <linearGradient id="busGradient" x1="8" y1="10" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#667eea"/>
+                                <stop offset="1" stop-color="#764ba2"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <h1>Greyhound Lines</h1>
+                    <span class="subtitle">探索美国的每一个角落</span>
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="#journey" class="nav-link">
+                    <span class="nav-icon">🚀</span>
+                    旅程
+                </a>
+                <a href="#destinations" class="nav-link">
+                    <span class="nav-icon">🗺️</span>
+                    目的地
+                </a>
+                <a href="#about" class="nav-link">
+                    <span class="nav-icon">💡</span>
+                    关于
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">✨ 每周一、三准时出发</div>
+                <h2 class="hero-title">
+                    <span class="title-line">踏上</span>
+                    <span class="title-line gradient-text">精彩旅程</span>
+                </h2>
+                <p class="hero-description">
+                    从繁华的纽约到阳光加州，从风城芝加哥到音乐之城纳什维尔，
+                    灰狗巴士带你领略美国的无限魅力
+                </p>
+                <button class="btn-primary" onclick="startJourney()">
+                    <span class="btn-text">开始探索</span>
+                    <span class="btn-icon">→</span>
+                </button>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <div class="card-icon">🗽</div>
+                    <div class="card-text">纽约</div>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-icon">🏖️</div>
+                    <div class="card-text">加州</div>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="card-icon">🎵</div>
+                    <div class="card-text">纳什维尔</div>
+                </div>
+                <div class="floating-card card-4">
+                    <div class="card-icon">🌆</div>
+                    <div class="card-text">芝加哥</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="journey-section" id="journey">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">当前旅程</span>
+                <h2 class="section-title">你的下一站在哪里？</h2>
+            </div>
+            
+            <div class="journey-display">
+                <div class="route-container">
+                    <div class="city-card from-city">
+                        <div class="city-emoji">📍</div>
+                        <div class="city-info">
+                            <div class="city-label">出发地</div>
+                            <div class="city-name" id="fromCity">纽约</div>
+                        </div>
+                    </div>
+                    
+                    <div class="route-connector">
+                        <div class="route-line">
+                            <div class="bus-moving" id="busMoving">
+                                <svg viewBox="0 0 40 24" fill="none">
+                                    <rect x="2" y="2" width="36" height="16" rx="4" fill="url(#busGrad2)"/>
+                                    <rect x="6" y="5" width="8" height="6" rx="2" fill="rgba(255,255,255,0.5)"/>
+                                    <rect x="16" y="5" width="8" height="6" rx="2" fill="rgba(255,255,255,0.5)"/>
+                                    <circle cx="10" cy="21" r="3" fill="#333"/>
+                                    <circle cx="30" cy="21" r="3" fill="#333"/>
+                                    <defs>
+                                        <linearGradient id="busGrad2" x1="2" y1="2" x2="38" y2="22">
+                                            <stop stop-color="#667eea"/>
+                                            <stop offset="1" stop-color="#764ba2"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="city-card to-city">
+                        <div class="city-emoji">🎯</div>
+                        <div class="city-info">
+                            <div class="city-label">目的地</div>
+                            <div class="city-name" id="toCity">洛杉矶</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-container" id="mapContainer">
+                    <div class="map-placeholder" id="mapPlaceholder">
+                        <div class="map-icon">🗺️</div>
+                        <p>选择一个城市开始探索</p>
+                    </div>
+                    <iframe id="googleMap" style="display:none; border:0; border-radius:16px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-card" id="contentCard">
+                <div class="content-header">
+                    <div class="header-icon">📺</div>
+                    <div class="header-text">
+                        <h3 id="contentTitle">准备好开始旅程了吗？</h3>
+                        <p class="content-meta" id="contentDate">点击上方按钮开始探索</p>
+                    </div>
+                </div>
+                <div class="content-body">
+                    <div class="video-info" id="videoInfo">
+                        <div class="info-empty">
+                            <div class="empty-icon">🎬</div>
+                            <p>视频信息将在这里显示</p>
+                        </div>
+                    </div>
+                    
+                    <div class="video-player-container" id="videoPlayerContainer" style="display:none;">
+                        <div class="video-player-wrapper">
+                            <iframe id="videoPlayer" style="width:100%; aspect-ratio:16/9; border-radius:12px;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="bilingual-content">
+                        <div class="language-card english">
+                            <div class="lang-header">
+                                <span class="lang-flag">🇺🇸</span>
+                                <span class="lang-name">English</span>
+                            </div>
+                            <div class="lang-content" id="englishContent">
+                                <p class="placeholder-text">英文介绍将在这里显示...</p>
+                            </div>
+                        </div>
+                        <div class="language-card chinese">
+                            <div class="lang-header">
+                                <span class="lang-flag">🇨🇳</span>
+                                <span class="lang-name">中文</span>
+                            </div>
+                            <div class="lang-content" id="chineseContent">
+                                <p class="placeholder-text">中文翻译将在这里显示...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="destinations-section" id="destinations">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-badge">热门目的地</span>
+                <h2 class="section-title">发现更多精彩城市</h2>
+            </div>
+            
+            <div class="destinations-grid" id="destinationsGrid"></div>
+        </div>
+    </section>
+
+    <footer class="footer" id="about">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="footer-bus">🚌</span>
+                    <span class="footer-name">Greyhound Lines</span>
+                </div>
+                <p class="footer-text">随时出发，探索美国的每一个精彩角落</p>
+                <div class="footer-divider"></div>
+                <p class="footer-copyright">© 2026 Greyhound Lines. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
